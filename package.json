@@ -19,7 +19,8 @@
   "homepage": "https://github.com/LuanSilveiraSouza/node-google-oauth2#readme",
   "dependencies": {
     "ejs": "^3.1.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "googleapis": "^59.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
