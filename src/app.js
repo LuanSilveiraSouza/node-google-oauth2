@@ -23,7 +23,7 @@ const url = OAuth2Client.generateAuthUrl({
   scope: 'https://www.googleapis.com/auth/calendar'
 })
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   const url = OAuth2Client.generateAuthUrl({
     access_type: 'offline',
   
@@ -31,6 +31,18 @@ app.use('/', (req, res) => {
   })
 
   res.render('login', {url});
+})
+
+app.get('/oauth2login', async (req, res) => {
+  const authCode = req.query.code;
+
+  const { tokens } = await OAuth2Client.getToken(authCode);
+
+  OAuth2Client.credentials = tokens;
+
+  console.log(tokens);
+
+  res.render('auth', { tokens })
 })
 
 module.exports = app;

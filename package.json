@@ -20,7 +20,8 @@
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "googleapis": "^59.0.0"
+    "googleapis": "^59.0.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
