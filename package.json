@@ -1,0 +1,27 @@
+{
+  "name": "google-oauth2",
+  "version": "1.0.0",
+  "description": "Google OAuth2 implemented in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "prod": "node src/server.js",
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuanSilveiraSouza/node-google-oauth2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuanSilveiraSouza/node-google-oauth2/issues"
+  },
+  "homepage": "https://github.com/LuanSilveiraSouza/node-google-oauth2#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
