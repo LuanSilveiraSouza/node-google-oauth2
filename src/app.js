@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
   const url = OAuth2Client.generateAuthUrl({
     access_type: 'offline',
   
-    scope: 'profile'
+    scope: ['profile', 'email']
   })
 
   res.render('login', {url});
@@ -40,9 +40,29 @@ app.get('/oauth2login', async (req, res) => {
 
   OAuth2Client.credentials = tokens;
 
-  console.log(tokens);
-
   res.render('auth', { tokens })
+})
+
+app.get('/dashboard', async (req, res) => {
+  const { token } = req.query;
+
+  if (token) {
+    try {
+      const result = await OAuth2Client.verifyIdTokenAsync({
+        idToken: token, 
+        audience: googleCredentials.client_id
+      });
+    
+      console.log(result);
+
+      res.render('dashboard');
+    } catch (err) {
+      res.redirect('/');
+    }
+  } else {
+    res.redirect('/');
+  }
+
 })
 
 module.exports = app;

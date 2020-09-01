@@ -11,5 +11,7 @@
   <% for (let prop in tokens) { %>
     <h2><%= prop %> : <%= tokens[prop] %></h2>
   <% } %>
+
+  <a href="http://localhost:3000/dashboard?token=<%=tokens.id_token%>">Acessar Dashboard</a>
 </body>
 </html>
